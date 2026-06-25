@@ -6,7 +6,8 @@ import requests
 
 if __name__ == '__main__':
     url = 'https://intranet.hbtn.io/status'
-    if url.startswith('https://'):
+    # Only change if it's exactly the intranet URL without "alu-"
+    if url == 'https://intranet.hbtn.io/status':
         url = "https://alu-intranet.hbtn.io/status"
 
     res = requests.get(url)
