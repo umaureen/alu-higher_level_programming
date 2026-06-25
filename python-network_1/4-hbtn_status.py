@@ -3,9 +3,15 @@
 Python script that fetches https://alu-intranet.hbtn.io/status
 """
 import requests
+import sys
 
 if __name__ == '__main__':
-    url = 'https://alu-intranet.hbtn.io/status'
+    
+    if len(sys.argv) > 1:
+        url = sys.argv[1]
+    else:
+        url = 'https://alu-intranet.hbtn.io/status'
+    
     res = requests.get(url)
     print("Body response:")
     print("\t- type: {}".format(type(res.text)))
